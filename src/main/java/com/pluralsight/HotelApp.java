@@ -4,11 +4,11 @@ public class HotelApp {
     public static void main(String[] args) {
 
         //Create different room objects
-        Room room1 = new Room (2, 129.99, false, false);
+        Room room1 = new Room(2, 129.99, false, false);
 
-        Room room2 = new Room (1, 89.99, true, false);
+        Room room2 = new Room(1, 89.99, true, false);
 
-        Room room3 = new Room (2, 149.99, false, true);
+        Room room3 = new Room(2, 149.99, false, true);
 
         //display room 1 information
         System.out.println("Room 1");
@@ -32,11 +32,11 @@ public class HotelApp {
 
         System.out.println("Price: $" + room2.getPrice());
 
-        System.out.println("Occupied: " + room2.isDirty());
+        System.out.println("Occupied: " + room2.isOccupied());
 
-        System.out.println("Dirty: " + room3.isDirty());
+        System.out.println("Dirty: " + room2.isDirty());
 
-        System.out.println("Availability: " + room3.isAvailable());
+        System.out.println("Availability: " + room2.isAvailable());
 
         System.out.println();
 
@@ -100,7 +100,7 @@ public class HotelApp {
         System.out.println();
 
         //Clean the room
-        room1.checkOut();
+        room1.cleanRoom();
 
         System.out.println("After Check Out");
 
@@ -115,7 +115,7 @@ public class HotelApp {
         //Check out the room
         room1.checkOut();
 
-        System.out.println("After Cleaning R");
+        System.out.println("After Cleaning Room");
 
         System.out.println("Occupied: " + room1.isOccupied());
 
@@ -124,5 +124,36 @@ public class HotelApp {
         System.out.println("Available: " + room1.isAvailable());
 
         System.out.println();
+
+        //Create a hotel object
+        Hotel hotel = new Hotel("Ocean View", 5, 20);
+
+        //Display starting room availability
+        System.out.println("Hotel Availability");
+
+        System.out.println("Available Suites: " + hotel.getAvailableSuites());
+
+        System.out.println("Available Basic Rooms: " + hotel.getAvailableRooms());
+
+        System.out.println();
+
+        //Attempt to book suites
+        boolean bookedSuite = hotel.bookRoom(2, true);
+
+        System.out.println("Suite Booking Successful: " + bookedSuite);
+
+        //Attempt to book basic rooms
+        boolean bookedRoom = hotel.bookRoom(3, false);
+
+        System.out.println("Basic Room Booking Successful: " + bookedRoom);
+
+        System.out.println();
+
+        //Display updated room availability
+        System.out.println("Updated Hotel Availability");
+
+        System.out.println("Available Suites: " + hotel.getAvailableSuites());
+
+        System.out.println("Available Basic Rooms: " + hotel.getAvailableRooms());
     }
 }
