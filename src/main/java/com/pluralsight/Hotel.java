@@ -36,4 +36,26 @@ public class Hotel {
         //Default booked basic rooms to 0
         this.bookedBasicRooms = 0;
     }
+    //Constructor used to create a hotel object with booked rooms
+    public Hotel (String name,
+                  int numberOfSuites,
+                  int numberOfRooms,
+                  int bookedSuites,
+                  int bookedBasicRooms){
+
+        //Set hotel name
+        this.name = name;
+
+        //Set total suites
+        this.numberOfSuites = numberOfSuites;
+
+        //Set total rooms
+        this.numberOfRooms = numberOfRooms;
+
+        //Set booked suites
+        this.bookedSuites = bookedSuites;
+
+        //Set booked basic rooms
+        this.bookedBasicRooms = bookedBasicRooms;
+    }
 }
