@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.time.LocalDateTime;
+
 //This class stores employee payroll information
 public class Employee {
 
@@ -77,6 +79,18 @@ public class Employee {
     public void punchIn(int time) {
         this.punchInTime = time;
     }
+    //Employee punches in using the current time
+    public void punchIn(){
+
+        //Get the current date and Time
+        LocalDateTime currentTime = LocalDateTime.now();
+
+        //get the current hour
+        int currentHour = currentTime.getHour();
+
+        //Call the original punchIn method
+        this.punchIn(currentHour);
+    }
 
     //Employee punches out and hours are added
     public void punchOut(int time){
@@ -87,6 +101,19 @@ public class Employee {
         //add worked hours to total hours
         this.hoursWorked += workedHours;
     }
+    //Employee punches out using the current time
+    public void punchOut(){
+
+        //Gte the current date and time
+        LocalDateTime currentTime = LocalDateTime.now();
+
+        //Get the current hour
+        int currentHour = currentTime.getHour();
+
+        //Call the original punchOut method
+        this.punchOut(currentHour);
+    }
+
     //Handles punching in or out
     public void punchTimeCard ( int time, String action){
 
