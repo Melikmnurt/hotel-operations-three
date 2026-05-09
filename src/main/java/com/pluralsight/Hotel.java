@@ -1,7 +1,7 @@
 package com.pluralsight;
 
 //This class represents a hotel
-public class Hotel{
+public class Hotel {
 
     //Stores the hotel name
     private String name;
@@ -16,5 +16,24 @@ public class Hotel{
     private int bookedSuites;
 
     //Stores how many basic rooms are booked
-    private int bokkedBasicRooms;
+    private int bookedBasicRooms;
+
+    //Constructor used to create a hotel object
+    public Hotel(String name, int numberOfSuites, int numberofRooms) {
+
+        //Set hotel name
+        this.name = name;
+
+        //Set total suites
+        this.numberOfSuites = numberOfSuites;
+
+        //Set total rooms
+        this.numberOfRooms = numberOfRooms;
+
+        //Default booked suites to 0
+        this.bookedSuites = 0;
+
+        //Default booked basic rooms to 0
+        this.bookedBasicRooms = 0;
+    }
 }
