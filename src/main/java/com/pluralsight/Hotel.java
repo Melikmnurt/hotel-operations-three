@@ -58,4 +58,16 @@ public class Hotel {
         //Set booked basic rooms
         this.bookedBasicRooms = bookedBasicRooms;
     }
+    //Returns the number of available suites
+    public int getAvailableSuites(){
+
+        //Calculate available suites
+        return this.numberOfSuites - this.bookedSuites;
+    }
+    //Returns the number of available basic rooms
+    public int getAvailableRooms(){
+
+        //Calculate available rooms
+        return this.numberOfRooms - this.bookedBasicRooms;
+    }
 }
