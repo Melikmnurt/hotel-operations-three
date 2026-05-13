@@ -8,10 +8,10 @@ public class EmployeeTest {
     //Test that punching in and out correctly adds worked hours
     @Test
 
-    public void punchOut_shouldCalculateHoursWorkedCorrectly(){
+    public void punchOut_shouldCalculateHoursWorkedCorrectly() {
 
         //Create an employee with 0 starting hours
-        Employee employee = new Employee (101,
+        Employee employee = new Employee(101,
                 "Mike",
                 "Front Desk",
                 20.00,
@@ -25,5 +25,19 @@ public class EmployeeTest {
         //Verify 4 regular hours were added
         assertEquals(4, employee.getRegularHours());
     }
-    //
+
+    //Tests that overtime hours are calculated correctly
+    @Test
+            public void getOvertimeHours_shouldCalculatorCorrectly(){
+
+    //Create an employee with overtime hours
+            Employee employee = new Employee(101,
+            "Mike",
+            "Front Desk",
+            20.00,
+            45);
+
+    //Verify overtime hours equal 5
+    assertEquals(5,employee.getOvertimeHours());
+}
 }
