@@ -23,5 +23,16 @@ public class RoomTest {
         //Verify the room is now dirty
         assertTrue(room.isDirty());
     }
-     //Test
+     //Test that checking out of a room makes the room no longer occupied
+    @Test
+
+    public void checkOut_shouldRemoveOccupancy(){
+
+        //Create an occupied room
+        Room room = new Room (2, 129.99, true, true );
+        room.checkOut();
+
+        //Verify the room is no longer occupied
+        assertFalse(room.isOccupied());
+    }
 }
