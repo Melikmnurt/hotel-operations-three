@@ -35,4 +35,50 @@ public class RoomTest {
         //Verify the room is no longer occupied
         assertFalse(room.isOccupied());
     }
+    //Tests that cleaning a room makes the room no longer dirty
+    @Test
+    public void cleanRoom_shouldCleanRoom(){
+
+        //Create a dirty room
+        Room room = new Room (2, 129.99, false, true);
+
+        //Clean the room
+        room.cleanRoom();
+
+        //Verify the room is now clean
+        assertFalse(room.isDirty());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 }
