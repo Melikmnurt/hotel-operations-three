@@ -47,38 +47,49 @@ public class RoomTest {
 
         //Verify the room is now clean
         assertFalse(room.isDirty());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
+     //Tests that an occupied room cannot be checked into again
+    @Test
+
+    public void checkIn_shouldNotWorkIfRoomIsOccupied(){
+
+        //Create an occupied room
+        Room room = new Room(2, 129.99, true, false);
+
+        //Attempt to check into the room
+        room.checkIn();
+
+        //Verify the room is still occupied
+        assertFalse(room.isAvailable());
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
